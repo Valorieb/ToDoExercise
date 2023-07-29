@@ -25,18 +25,11 @@ function App() {
     },
   ]);
 
-  const [value, setValue] = React.useState("");
-  const handleSubmit = (e) => {
-    //default behavior is to reload the page. This prevents that.
-    e.preventDefault();
-    //if the value is empty, do nothing.
-    if (!value) return;
-    //otherwise it will add new todos. This object gets the spread of current todos and adds another todo object.
-    const newTodos = [...todos, { text: value, isCompleted: false }];
+  const addTodo = (text) => {
+    //This object gets the spread of current todos and adds another todo object.
+    const newTodos = [...todos, { text: text, isCompleted: false }];
     //updates the old todo list to the new todo list (changes to current state)
     setTodos(newTodos);
-    //clears form
-    setValue("");
   };
 
   const removeTodo = (e) => {
@@ -55,16 +48,7 @@ function App() {
           {todo.text}
         </div>
       ))}
-
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          className="input"
-          value={value}
-          placeholder="Add Todo ..."
-          onChange={(e) => setValue(e.target.value)}
-        ></input>
-      </form>
+      <TodoForm addTodo={addTodo} />
     </>
   );
 }
