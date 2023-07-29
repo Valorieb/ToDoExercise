@@ -9,14 +9,18 @@ code {
   font-family: Arial;
 }
 
+h1 {
+  font-family: "Borel", cursive;
+}
+
 .app {
-  background: #209cee;
+  background: #0f017b;
   padding: 30px;
   height: 100vh;
 }
 
 .todo-list {
-  background: #e8e8e8;
+  background: #e4bcf1;
   border-radius: 4px;
   padding: 5px;
   max-width: 400px;

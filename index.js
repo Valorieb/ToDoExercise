@@ -41,13 +41,14 @@ function App() {
 
   //return loops through all todos and creates a div tag for each where the key is the index value and the inner text is the value pair.
   return (
-    <>
-      {todos.map((todo, i) => (
-        <Todo index={i} key={i} todo={todo} remove={removeTodo} />
-      ))}
-
-      <TodoForm addTodo={addTodo} />
-    </>
+    <div className="app">
+      <div className="todo-list">
+        {todos.map((todo, i) => (
+          <Todo index={i} key={i} todo={todo} remove={removeTodo} />
+        ))}
+        <TodoForm addTodo={addTodo} />
+      </div>
+    </div>
   );
 }
 
